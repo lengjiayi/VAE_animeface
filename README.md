@@ -11,17 +11,17 @@
 
 #### 编码-解码
 
-![VAEdecode](https://github.com/lengjiayi/VAE_animeface/tree/master/assets/VAEdecode.PNG)
+![VAEdecode](https://github.com/lengjiayi/VAE_animeface/blob/master/assets/VAEdecode.PNG)
 
 上图是全连接的VAE对18张随机的人脸编码-解码后的结果，可以看出对颜色的还原比较精准，但是对人脸倾斜角度的还原不是很好。
 
 #### 生成
 
-![VAEfixin](https://github.com/lengjiayi/VAE_animeface/tree/master/assets/VAEfixin.PNG)
+![VAEfixin](https://github.com/lengjiayi/VAE_animeface/blob/master/assets/VAEfixin.PNG)
 
 上图是随机选取两个样本编码及其高维线段中间的七个等分点产生的脸，两端是输入图片，可以看到人脸的发色逐渐变浅，人脸的朝向也从向右逐渐转为向左。
 
-![VAEgen](https://github.com/lengjiayi/VAE_animeface/tree/master/assets/VAEgen.PNG)
+![VAEgen](https://github.com/lengjiayi/VAE_animeface/blob/master/assets/VAEgen.PNG)
 
 上图则是在编码空间使用numpy.random.normal随机产生的一些人脸，可以看到72.png出现了之前所说的明显噪点。
 
