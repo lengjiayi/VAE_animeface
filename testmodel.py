@@ -102,6 +102,23 @@ def fixin():
 	plt.show()
 
 
+#show the function of each channel
+def findpattern():
+	for channel in range(0,10):
+		sigma = (maxspace[channel]-minspace[channel])/2
+		base = codes[random.randint(0,len(codes))]
+		for vdx in range(-4,5):
+			cur = base
+			cur[channel] = sigma/4*vdx
+			curface = vae.decoder(torch.from_numpy(cur).float())
+			plt.subplot(10,9,channel*9+vdx+5)
+			plt.xticks([])
+			plt.yticks([])
+			plt.imshow(curface.detach().numpy().reshape(30,30),cmap='gray')
+	plt.subplots_adjust(wspace=0,hspace=0,left=None,right=None,bottom=None,top=None)
+	plt.show()
+
+
 
 #compare 25 raw faces and reconstrain faces
 def visgenerate():
@@ -154,4 +171,5 @@ maxspace = codes.max(axis=0)
 #np.random.seed(0)
 #visgenerate()
 #genran(100)
-fixin()
+#fixin()
+findpattern()
